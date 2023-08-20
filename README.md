@@ -1,8 +1,9 @@
 # 0x11. C - printf
 
 - In the C programming language, **printf** is a function that formats and prints output to the console. It stands for "**print formatted**." It allows you to combine text and variables in a specific format and then display the formatted output on the screen or in a file.
+<img width="551" alt="printf2" src="https://github.com/obithelight/printf/assets/91734251/7e2a8a5e-4139-4f3f-8794-e07666b85050">
 
-![hello_world](https://github.com/obithelight/printf/assets/91734251/dbc3aba4-82fd-42f6-a380-c2deb66c5ba3)
+
 
 ## Project Concept
 	Write your own printf function.
