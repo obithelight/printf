@@ -1,6 +1,6 @@
 # 0x11. C - printf
 
-- In the C programming language, **printf** is a function that is used to format and print text or other data to the standard output (usually the console). It stands for "**print formatted**" and is part of the standard C library header file called (`stdio.h`). 
+- In the C programming language, **printf** is a function that is used to format and print text or other data to the standard output (usually the console). It stands for "**print formatted**" and is part of the standard C library header file called `stdio.h`.
 - **Printf** allows you to combine text and variables in a specific format and then display the formatted output on the screen or in a file.
 
 
