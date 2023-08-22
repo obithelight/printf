@@ -8,4 +8,4 @@
 int _printf(const char *format, ...);
 int lengthOfStr(char *obi);
 
-#endif 
+#endif /* MAIN_H */ 
