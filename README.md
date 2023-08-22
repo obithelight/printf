@@ -16,13 +16,13 @@
 
 ## Edge Cases to Consider
 	Percent (%)
-	Float output
 	String output
 	Integer output
- 	length of input
+ 	Length of input
 	Character output
 	Variable addresses
 	Hexadecimal numbers
+	Floating point numbers
 
 ## Contributors
 - This project was started and finished by [`Obi`](https://github.com/obithelight) and [`Uncle Ted`](https://github.com/UncleTed01). All rights reserved.
