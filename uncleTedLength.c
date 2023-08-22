@@ -15,6 +15,6 @@ int lengthOfStr(char *obi)
 	for (start = 0; obi[start] != '\0'; start++)
 	{
 		end++;
-	{
+	}
 	return (end);
 }
