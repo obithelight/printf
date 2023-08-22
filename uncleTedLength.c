@@ -9,12 +9,12 @@
 
 int lengthOfStr(char *obi)
 {
-        int start;
-        int end = 0;
+	int start;
+	int end = 0;
 
-        for (start = 0; obi[start] != '\0'; start++)
-        {
-                end++;
-        }
-        return (end);
+	for (start = 0; obi[start] != '\0'; start++)
+	{
+		end++;
+	{
+	return (end);
 }
