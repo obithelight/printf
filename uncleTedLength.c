@@ -4,7 +4,7 @@
  * lengthOfStr - returns the length of a string
  * @obi: string
  *
- * Return: 0
+ * Return: (0)
  */
 
 int lengthOfStr(char *obi)
