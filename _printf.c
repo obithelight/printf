@@ -15,8 +15,9 @@ int _printf(const char *format, ...)
 	va_list hufano;
 
 	if (format == NULL)
+	{
 		return (-1);
-
+	}
 	va_start(hufano, format);
 
 	while (*format)
