@@ -12,13 +12,10 @@ int _printf(const char *format, ...)
 	int obi = 0;
 	char b;
 	char *uncleTed;
-
 	va_list hufano;
 
 	if (format == NULL)
-	{
-		exit(98);
-	}
+		return (-1);
 
 	va_start(hufano, format);
 
@@ -33,31 +30,27 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-			{
 				break;
-			}
 
+			else if (*format == '%')
+			{
+				write(1, format, 1);
+				obi++;
+			}
 			if (*format == 'c')
 			{
 				b = va_arg(hufano, int);
 				write(1, &b, 1);
 			}
-
 			else if (*format == 's')
 			{
 				uncleTed = va_arg(hufano, char *);
 				write(1, uncleTed, lengthOfStr(uncleTed));
 				obi += lengthOfStr(uncleTed);
 			}
-			else if (*format == '%')
-			{
-				write(1, format, 1);
-				obi++;
-			}
 		}
 		format++;
 	}
 	va_end(hufano);
-
 	return (obi);
 }
