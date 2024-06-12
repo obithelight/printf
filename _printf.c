@@ -1,57 +1,50 @@
 #include "main.h"
 
 /**
- * _printf - writes formatted text to the stdout
- * @format: character, string, or formatted text
- *
- * Return: number of bytes of format
+ * _printf - prints formatted to the stdout just like the printf
+ * @format: formatted text to be checked before printing
+ * Return: number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
-	int obi = 0;
-	char b;
-	char *uncleTed;
-	va_list hufano;
+	va_list list;
+	int len = 0, i = 0, j, arr_len;
 
-	if (format == NULL)
+	print_ft func[] = {
+		{'c', print_char},
+		{'s', print_str},
+		{'%', print_modulo},
+	};
+	va_start(list, format);
+	while (format && format[i])
 	{
-		return (-1);
-	}
-	va_start(hufano, format);
-
-	while (*format)
-	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			write(1, format, 1);
-			obi++;
+			putchar(format[i]);
+			len++;
 		}
 		else
 		{
-			format++;
-			if (*format == '\0')
-				break;
-
-			else if (*format == '%')
+			i++, j = 0;
+			arr_len = sizeof(func) / sizeof(func[0]);
+			while (j < arr_len)
 			{
-				write(1, format, 1);
-				obi++;
+				if (format[i] == func[j].symbol)
+				{
+					len += func[j].print(list);
+					break;
+				}
+				j++;
 			}
-			if (*format == 'c')
+			if (format[i] != func[j].symbol)
 			{
-				b = va_arg(hufano, int);
-				write(1, &b, 1);
-			}
-			else if (*format == 's')
-			{
-				uncleTed = va_arg(hufano, char *);
-				write(1, uncleTed, lengthOfStr(uncleTed));
-				obi += lengthOfStr(uncleTed);
+				i--;
+				putchar(format[i]);
+				len++;
 			}
 		}
-		format++;
+		i++;
 	}
-	va_end(hufano);
-	return (obi);
+	va_end(list);
+	return (len);
 }
