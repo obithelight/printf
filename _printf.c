@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	int len = 0, i = 0, j, arr_len = sizeof(func) / sizeof(func[0]);
 
 	va_start(list, format);
-	if (format[0] == '%' && format[1] == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	while (format && format[i])
 	{
