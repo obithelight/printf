@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - prints formatted to the stdout just like the printf
  * @format: formatted text to be checked before printing
@@ -7,15 +6,17 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list list;
-	int len = 0, i = 0, j, arr_len;
-
 	print_ft func[] = {
 		{'c', print_char},
 		{'s', print_str},
 		{'%', print_modulo},
 	};
+	va_list list;
+	int len = 0, i = 0, j, arr_len = sizeof(func) / sizeof(func[0]);
+
 	va_start(list, format);
+	if (format[0] == '%' && format[1] == '\0')
+		return (-1);
 	while (format && format[i])
 	{
 		if (format[i] != '%')
@@ -25,16 +26,14 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			i++, j = 0;
-			arr_len = sizeof(func) / sizeof(func[0]);
-			while (j < arr_len)
+			i++;
+			for (j = 0; j < arr_len; j++)
 			{
 				if (format[i] == func[j].symbol)
 				{
 					len += func[j].print(list);
 					break;
 				}
-				j++;
 			}
 			if (format[i] != func[j].symbol)
 			{
