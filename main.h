@@ -18,6 +18,8 @@ typedef struct print_format
 int print_char(va_list list);
 int print_str(va_list list);
 int print_modulo(va_list list);
+int print_integer(va_list list);
+int int_helper(unsigned int value);
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */

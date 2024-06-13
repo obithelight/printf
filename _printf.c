@@ -14,7 +14,8 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'s', print_str},
 		{'%', print_modulo},
-		/* {'d', print_int}, */
+		{'d', print_integer},
+		{'i', print_integer},
 	};
 
 	/* check if format == NULL or if (format == '%' && '\0') */
